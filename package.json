@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.3",
+    "nunjucks": "^3.2.4",
+    "path": "^0.12.7",
+    "serve-static": "^1.16.2"
+  }
+}

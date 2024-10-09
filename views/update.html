@@ -1,0 +1,21 @@
+    
+{% include "homepage_header.html" %}
+{% set pageinfo = pageinfo %}
+{% include "page_header.html" %}    
+
+<form action='/process/update?b_id={{pageinfo[0].b_id}}' method="post">
+    <ul>
+        <li>게시물 수정</li>
+        <li>제목 : <br>
+            <textarea name="b_title" cols="40" rows="2"></textarea>
+        </li> 
+        <li>내용 : <br>
+            <textarea name="b_content" cols="50" rows="8"></textarea>
+        </li> 
+        <button>수정하기</button>                       
+    </ul>
+</form>
+
+
+
+{% include "homepage_footer.html" %}

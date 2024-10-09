@@ -1,0 +1,42 @@
+    
+{% include "homepage_header.html" %}
+{% set pageinfo = pageinfo %}
+{% include "page_header.html" %}    
+
+<table border = 1>
+    <tr>
+        <th>댓글 번호</th>
+        <th>댓글 내용</th>
+        <th>댓글 작성 시간</th>
+        <th>삭제</th>
+    </tr>
+   
+
+    {% for item in pageinfo %}
+    <tr>
+        <td> {{item.c_id}} </td>
+        <td> {{item.c_content| replace('\n', '<br>') | safe}} </td>
+        <td> {{item.c_write_date}}</td>
+        {% if item.c_u_id == id %}
+            <td> <a href='/delete_comment?c_id={{item.c_id}}&b_id={{item.b_id}}' onclick="return confirm('정말 삭제할까요?')">삭제</a></td>
+        {% else %}
+            <td> </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+
+</table>
+
+<form action='/process/register_comment?b_id={{pageinfo[0].b_id}}' method="post">
+    <ul>
+        <li>댓글 작성</li>
+        <li>내용 : <br>
+            <textarea name="c_content" cols="50" rows="8"></textarea>
+        </li> 
+        <button>생성하기</button>                       
+    </ul>
+</form>
+
+
+
+{% include "homepage_footer.html" %}

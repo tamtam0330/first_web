@@ -1,0 +1,15 @@
+{% include "homepage_header.html" %}
+
+    <img src="img/jungle_big.png" width="100" height="60">
+    <form action="/process/register" method="post">
+        <ul>
+            <li>글 작성</li>
+            <li>제목 : <input type="text" name="b_title" required></li>
+            <li>내용 : <br>
+                <textarea name="b_content" cols="50" rows="8"></textarea>
+            </li> 
+            <button>생성하기</button>                       
+        </ul>
+    </form>
+
+{% include "homepage_footer.html" %}

@@ -1,0 +1,31 @@
+<header style="border-bottom: 1px solid #aaa; margin-bottom:10px; padding-bottom:10px;"> 
+    <h2>[{{pageinfo[0].b_id}}] {{pageinfo[0].b_title}}</h2>
+    <table border = 1>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>등록일</th>
+            <th>댓글</th>
+            {% if pageinfo[0].b_u_id == id %}
+                <th>수정</a></th>
+                <th>삭제</th>
+            {% endif %}
+            
+        </tr>
+    
+
+        <tr>
+            <td> {{pageinfo[0].b_id}} </td>
+            <td> {{pageinfo[0].b_title}} </td>
+            <td> {{pageinfo[0].b_content | replace('\n', '<br>') | safe}} </td>
+            <td> {{pageinfo[0].b_upload_date}} </td>
+            <td> <a href='/page?b_id={{pageinfo[0].b_id}}'>댓글</a></td>
+            {% if pageinfo[0].b_u_id == id %}
+                <td> <a href='/update?b_id={{pageinfo[0].b_id}}'>수정</a></td>
+                <td> <a href='/delete?b_id={{pageinfo[0].b_id}}' onclick="return confirm('정말 삭제할까요?')">삭제</a></td>
+            {% endif %}
+        </tr>
+
+    </table>
+</header>
