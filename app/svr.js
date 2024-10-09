@@ -4,26 +4,27 @@ const express = require('express')
 const mysql = require('mysql2')
 const path = require('path')
 const static = require('serve-static')
-const dbconfig = require('./config/dbconfig.json')
+const dbconfig = require('../config/dbconfig.json')
 const nunjucks = require('nunjucks')
 const session = require('express-session')
 const app = express()
 
 // 라우팅
-const home = require("./routes/home");
-
+const home = require("./routes");
+app.use("/", home);
 
 // 앱 세팅
-app.set("view engine", 'html')
-nunjucks.configure('views', {
+nunjucks.configure('views', {   //views 파일 안에 있는 파일들을 nunjucks 템플릿을 적용 
     express: app,
     watch: true,
 });
 
+app.set("views", "./views")
+app.set("view engine", 'html')
+
 app.use(express.urlencoded({ extended: true })) //html 파싱해서 req.body 로 사용
 app.use(express.json()) 
 app.use(express.static(__dirname + '/public'))  //정적파일 /public 이용
-app.use("/", home);
 
 module.exports = app;
 
