@@ -13,13 +13,13 @@
     
     <header style="border-bottom: 1px solid #aaa; margin-bottom:10px; padding-bottom:10px;">
         <nav>
-            <a href="/homepage">Home</a> |
+            <a href="/homepage/home">Home</a> |
             <a href="/board">Board</a> |
-            <a href="/register">Register</a> |
+            <a href="/homepage/register">Register</a> |
             
             {% if id %}
                 {{name}}님 환영합니다.
-                <a href="/process/logout">로그아웃</a>
+                <a href="/users/logout">로그아웃</a>
             {% else %}
                 <a href="/login">로그인</a>
             {% endif %}

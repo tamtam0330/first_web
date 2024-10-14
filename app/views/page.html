@@ -18,7 +18,7 @@
         <td> {{item.c_content| replace('\n', '<br>') | safe}} </td>
         <td> {{item.c_write_date}}</td>
         {% if item.c_u_id == id %}
-            <td> <a href='/delete_comment?c_id={{item.c_id}}&b_id={{item.b_id}}' onclick="return confirm('정말 삭제할까요?')">삭제</a></td>
+            <td> <a href='/page/delete_comment?c_id={{item.c_id}}&b_id={{item.b_id}}' onclick="return confirm('정말 삭제할까요?')">삭제</a></td>
         {% else %}
             <td> </td>
         {% endif %}
@@ -27,7 +27,7 @@
 
 </table>
 
-<form action='/process/register_comment?b_id={{pageinfo[0].b_id}}' method="post">
+<form action='/page/comment?b_id={{pageinfo[0].b_id}}' method="post">
     <ul>
         <li>댓글 작성</li>
         <li>내용 : <br>

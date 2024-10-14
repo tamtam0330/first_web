@@ -22,8 +22,8 @@
             <td> {{item.b_upload_date}} </td>
             <td> <a href="/page?b_id={{item.b_id}}">보기</a></td>
             {% if item.b_u_id == id %}
-                <td> <a href='/update?b_id={{item.b_id}}'>수정</a></td>
-                <td> <a href="/delete?b_id={{item.b_id}}" onclick="return confirm('정말 삭제할까요?')">삭제</a></td>
+                <td> <a href='/page/update_comment?b_id={{item.b_id}}'>수정</a></td>
+                <td> <a href="/board/delete?b_id={{item.b_id}}" onclick="return confirm('정말 삭제할까요?')">삭제</a></td>
             {% else %}
                 <td> </td>
                 <td> </td>
